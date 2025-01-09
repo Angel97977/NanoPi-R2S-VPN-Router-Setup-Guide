@@ -24,9 +24,9 @@ _Future Improvements_
 
 Ensure you have the following items:
 
-* NanoPi R2S
+* NanoPi R2S.
 
-* MicroSD card (16GB or higher)
+* MicroSD card (16GB or higher).
 
 * Pre-flash with the FriendlyWrt firmware. You need to flash the micro SD cards with the help of the oficial images. 
     Visit [download here](https://download.friendlyelec.com/NanoPiR2S) to download image files (in the "01_Official images/01_SD card images" directory);
@@ -36,9 +36,9 @@ Ensure you have the following items:
     Take out the SD and insert it to NanoPi-R2S's microSD card slot;
     Power on NanoPi-R2S and it will be booted from your TF card, some models may require pressing the Power button to start; 
 
-* 5V/3A power adapter
+* 5V/3A power adapter.
 
-* Ethernet cables (at least 2):
+* Ethernet cable.
 
 * One for connecting to your router (WAN).
 
@@ -57,6 +57,8 @@ Ensure you have the following items:
 2.Connect the NanoPi R2S
 
   *  Insert the MicroSD card into the NanoPi R2S.
+  
+  ## Notice: The first time you need to connect the NanoPi directly to your router (port WAN), You need to wait for a while (about 2~3 minutes) to boot up for the first time, and then set FriendlyWrt, you can enter the ttyd terminal on the openwrt webpage, when the prompt is displayed as root@FriendlyWrt, it means the system has been initialize. Then you can connect directly to your computer via LAN, to do further configurations. 
 
   *  Connect the LAN port to your computer using an Ethernet cable.
 
@@ -68,10 +70,9 @@ Ensure you have the following items:
 
   *  Access the NanoPi via SSH whether it's a tool like putty or the one of your preference. The ip direction can be modify on LuCi, the explanation is in Network Configuration (below).
 
-  *  The default password is password. Change it immediately:
-To change the password the command input is `password`. 
+  * Default login credentials: username `root`, password is  `password`. Change the password immediately with the `passwd` command.
+  
 
-## Notice: The first time you need to connect the NanoPi directly to your router (port WAN), You need to wait for a while (about 2~3 minutes) to boot up for the first time, and then set FriendlyWrt, you can enter the ttyd terminal on the openwrt webpage, when the prompt is displayed as root@FriendlyWrt, it means the system has been initialize connect directly to your computer via LAN. 
 
 How do you know if you have access inside the NanoPi?
 If you're inside the Nano you were seeing something like this.
@@ -79,7 +80,7 @@ If you're inside the Nano you were seeing something like this.
 
 With the message 'Friendlywrt' in it. At this point, you can begin with the software setups on the firmware, dropbear and else.
 
-### Network Configuration
+### Network Configuration (How do I change the IP direction, to have the SSH access? VIA LuCi)
 1) Click on Network → Interfaces, then click on the Edit button of the LAN Network;
 2) In General Setup tab, input new IP address (for example: 192.168.11.1), click "Save" and then click "Save & Apply";
 3) On the pop-up window with the title “Connectivity change“, click "Apply and revert on connectivity loss";
@@ -87,14 +88,14 @@ With the message 'Friendlywrt' in it. At this point, you can begin with the soft
 
 ## Notice: Always remember to poweroff the device inside the terminal with the `poweroff`command and hit enter, wait until the led light is off, and then unplug the power supply.
 
-In this case I use an Access Point, or better known as AP. Because I'm wasn't able to connect to wifi between my computer directly connected to LAN port on the NanoPi RS2. I use the following table to get to know much better the types of AP's and the preinstalled driver's on each one.
+At this point I use an Access Point or better known as AP. Because I'm wasn't able to connect to wifi between my computer directly connected to LAN port on the NanoPi RS2 and providing internet from there. I use the following table to get to know much better the types of AP's and the preinstalled driver's on each one.
 ![image](https://github.com/user-attachments/assets/b4703065-d71d-43a4-9d3f-f2d93afbe603)
 
 ### WiFi Configuration
 
-1. Configure WiFi Access Point (In my case, I use the rtl8812au AP). And I really got no issues on the way. But I do a configuration inside the NanoPi, because it hasn't provide the power suply on the USB port. 
+1. Configure WiFi Access Point (On my case, I use the rtl8812au AP). And I really got no issues on the way. But I do a configuration inside the NanoPi, because it hasn't provide the power suply on the USB port. 
 Check the power suply on the USB port
-Execute the following command to ensure the energy doesn't be in sleep mode 
+Ensure the USB power suply is active:
 
 `cat /sys/bus/usb/devices/usb3/power/control`
 
