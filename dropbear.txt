@@ -1,0 +1,20 @@
+# Remember: to have an access to write/read on this kind of files inside of the NanoPi. 
+# You need to put on the command `vi /etc/config/dropbear`. And to insert/delete use letter 'i'.
+# When you are done editing or already done. Enter 'esc' 
+# This file works as the SSH access
+
+config dropbear
+    option PasswordAuth 'on'
+    option RootPasswordAuth 'on'
+    option Port         '2222' # This is optional, only to be more precautious. The default port is '22'
+    option Interface 'lan'
+
+#Notice: Enter ':qa' → to exit
+#        Enter ':wq' → to save and exit
+#        Enter ':qa!' → to exit without saving
+# Ctrl + Z works, but it's useless as ctrl + c  
+
+# Notice: When you commit changes always 
+# remember to restart the file you already edit.
+# To restart this of file, 
+# TYPE: '/etc/init.d/dropbear restart' 

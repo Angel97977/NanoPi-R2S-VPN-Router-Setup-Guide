@@ -1,0 +1,34 @@
+# Remember: to have an access to write/read on this kind of files inside of the NanoPi. 
+# You need to put on the command `vi /etc/config/wireless`. And to insert/delete use letter 'i'.
+# When you are done editing or already done. Enter 'esc'
+
+config wifi-device 'radio0'
+    option type 'mac80211'
+    option path 'platform/ff5c0000.usb/usb3/3-1/3-1:1.0'
+    option channel '7'
+    option band '2g'
+    option htmode 'HT20'
+    option country 'MX'
+    option disabled '0'
+
+config wifi-iface 'default_radio0'
+    option device 'radio0'
+    option network 'lan'
+    option mode 'ap' # This is already changed because as it is said in the readme file 
+    option ssid '404 Network Error' # This is the name you're assigning when the Nano It's plugged into the router. (WAN).
+    option encryption 'psk2'
+    option key 'P@ssw0rd123!' # This is the password you're assigning when the Nano It's plugged into the router. (WAN).
+
+
+
+# Notice: Enter ':qa' → to exit
+#        Enter ':wq' → to save and exit
+#        Enter ':qa!' → to exit without saving
+
+# Ctrl + Z works, but it's useless as ctrl + c (only to copy or make a backup)  
+
+# This especific file doesn't need to 
+# restart. But in either cases (LAN or WAN connection of the NanoPi), you must see it like a wireless router connection under your computer. 
+# If this isn't working or it's missing the router connection. To view systems logs for errors type 'logread', check service statuses with `'/etc/init.d/network status'`,
+# check all the modified files. Try to reboot the NanoPi with 'reboot' and hit enter. 
+
