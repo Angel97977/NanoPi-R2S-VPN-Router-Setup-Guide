@@ -167,7 +167,7 @@ Check service statuses:
 
 ### Future Improvements
 
-Install VPN Set up a VPN service (e.g., WireGuard or OpenVPN) for secure remote access.
+Install VPN Set up a VPN service (e.g., WireGuard or OpenVPN) for secure remote access. (At this point you only have an internet access. The VPN installation explanation comes in the folder called VPN configuration).
 
 Monitor Traffic Use tools like luci-app-statistics to visualize network traffic.
 
